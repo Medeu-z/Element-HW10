@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Film } from '../../interfaces/film';
+import { FilmService } from '../../services/film.service';
+import { Router,  ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-films-details',
@@ -6,5 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./films-details.component.scss']
 })
 export class FilmsDetailsComponent {
+  @Input() film!: Film;
+  similarFilm: Film[] = [];
 
+  constructor(
+    private router : Router, 
+    private route: ActivatedRoute,
+    private filmService: FilmService,
+  ) {}
+
+  ngOnInit() {
+    const id = this.route.snapshot.params["id"];
+    this.filmService.getFilm(id).map((i) => (this.film = i));
+    this.similarFilm = [... this.filmService.getSimilarFilms(id)]
+    console.log("films",this.filmService.getSimilarFilms(id))
+  }
+  onClickHandler() {
+    this.router.navigate(['/films']);
+  }
+  onClickFilm(filmId: number) {
+    this.router.navigate(['/film', filmId]);
+  }
 }

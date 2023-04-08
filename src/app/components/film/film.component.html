@@ -4,6 +4,9 @@
         <div class="film-info">
            <p>{{film.name}}</p>
            <p class="rating">{{film.rate}}</p>
+           <div class="gener-list">
+            <div *ngFor="let gener of  film.genres" class="gener">{{gener}}</div>
+            </div>  
         </div>
     </div>
 </div>

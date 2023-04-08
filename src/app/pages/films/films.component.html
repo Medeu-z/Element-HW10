@@ -8,7 +8,7 @@
         <div class="slider__container">
             <div class="slider__track">
                 <div class="slider__item" *ngFor="let film of  popularFilm">
-                    <app-popular-film [film]="film"></app-popular-film>
+                    <app-popular-film [film]="film" (click)="onClickHandler(film.id)"></app-popular-film>
                 </div>
             </div>
         </div>

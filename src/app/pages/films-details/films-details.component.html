@@ -1,2 +1,49 @@
 <app-header></app-header>
-<p>films-details works!</p>
+<div class="film-detail">
+    <div class="wrapper">
+        <div class="film-img">
+            <p class="home" (click)="onClickHandler()">Back To Films</p>
+            <img src="../../../assets/images/movie-covers/{{film.img}}" alt="">
+        </div>
+        <div class="film-text">
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td>{{film.name}}</td>
+                </tr>
+                <tr>
+                    <th>Rate</th>
+                    <td>{{film.rate}}</td>
+                </tr>
+                <tr>
+                    <th>Time</th>
+                    <td>{{film.length}}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{film.description}}</td>
+                </tr>
+                <tr>
+                    <th>Genres</th>
+                    <td >
+                        <div class="gener-list">
+                            <div *ngFor="let gener of  film.genres" class="gener">{{gener}}</div>
+                        </div>               
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="similar-films-list  wrapper">
+        <p class="similar-films-title">Similar Films</p>
+        <div class="slider__container">
+            <div class="slider__track">
+                <div class="slider__item" *ngFor="let film of  similarFilm">
+                    <app-film [film]="film" (click)="onClickFilm(film.id)"></app-film>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+

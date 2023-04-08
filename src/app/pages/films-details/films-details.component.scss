@@ -1,0 +1,120 @@
+.film-detail{
+    background-image:
+        linear-gradient(to bottom, rgba(2, 8, 44, 0.5), rgba(12, 12, 12,1)),
+        url("../../../assets/images/main.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: black;
+    width: 100vw;
+    height: 100vh;
+}
+.home{
+    text-decoration: underline;
+    font-size: 20px;
+    cursor: pointer;
+}
+.home:hover{
+    color: rgb(142, 142, 167);
+}
+.film-detail>div{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.film-img{
+    width: 45%;
+}
+.film-img img{
+    width: 100%;
+    height: auto;
+}
+.film-text{
+    margin: 0 10%;
+}
+table{
+    background-color: rgba(47, 49, 51, 0.3);
+    padding: 20px;
+}
+table th{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+    padding-right: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(2, 2, 2);
+}
+table td{
+    padding-bottom: 5%;
+}
+.gener-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gener{
+    padding: 3px 15px;
+    border-radius: 10px;
+    background-color: rgba(137, 143, 148, 0.767);
+    color: black;
+    margin-right: 5px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+.slider__container{
+    overflow-x:auto;
+    width: 100%;
+}
+.slider__container::-webkit-scrollbar{width:0px;height:0px;}
+.slider__track{
+    width: 90%;
+    display: flex;
+    transition: all 0.3s;
+    justify-content: flex-start;
+    align-items: end;
+}
+.slider__item, .similar-films-title{
+    color: black;
+    margin-right: 20px;
+}
+.similar-films-title{
+    font-size: 24px;
+    font-weight: 500;
+    width: 98%;
+}
+.similar-films-list{
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (max-width: 1000px){
+    .film-detail>div{
+       flex-direction: column;
+    }
+    .film-img{
+        margin-top: 100px;
+        width: 80%;
+        height: 200px;
+        overflow: hidden;
+    }
+    .film-img img{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 400px){
+    .film-text{
+        margin: 0 1%;
+    }
+    .film-img{
+        width: 100%;
+    }
+    table{
+        padding: 5px;
+    }
+    table th, .home, table td,.gener{
+        font-size: 12px;
+    }
+    .gener{
+        padding: 3px 8px;
+    }
+}

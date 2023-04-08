@@ -36,3 +36,16 @@
 .rating{
     color: orange;
 }
+.gener-list{
+    display: flex;
+    flex-wrap: wrap;
+}
+.gener{
+    padding: 3px 15px;
+    border-radius: 10px;
+    background-color: rgba(137, 143, 148, 0.767);
+    color: black;
+    margin-right: 5px;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
