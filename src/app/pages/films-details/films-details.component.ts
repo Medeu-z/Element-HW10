@@ -13,7 +13,7 @@ export class FilmsDetailsComponent {
   similarFilm: Film[] = [];
 
   constructor(
-    private router : Router, 
+    private router : Router,  
     private route: ActivatedRoute,
     private filmService: FilmService,
   ) {}
@@ -22,12 +22,15 @@ export class FilmsDetailsComponent {
     const id = this.route.snapshot.params["id"];
     this.filmService.getFilm(id).map((i) => (this.film = i));
     this.similarFilm = [... this.filmService.getSimilarFilms(id)]
-    console.log("films",this.filmService.getSimilarFilms(id))
   }
   onClickHandler() {
     this.router.navigate(['/films']);
   }
   onClickFilm(filmId: number) {
+    this.similarFilm = [];
+    this.filmService.getFilm(filmId).map((i) => (this.film = i));
+    this.similarFilm = [... this.filmService.getSimilarFilms(filmId)]
     this.router.navigate(['/film', filmId]);
+    
   }
 }

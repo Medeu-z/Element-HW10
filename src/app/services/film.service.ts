@@ -22,7 +22,7 @@ export class FilmService {
     let similarFilm: Film[] = []
     let film = this.getFilm(movieId)
     movies.filter((movie) => {
-      if(movie.genres.some( (g: GenreType) => film[0].genres.includes(g))){
+      if(movie.genres.some( (g: GenreType) => film[0].genres.includes(g)) && movie.id !== movieId){
         similarFilm = [...similarFilm, movie]
       }
     });
