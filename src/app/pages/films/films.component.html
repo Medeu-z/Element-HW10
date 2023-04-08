@@ -1,0 +1,27 @@
+<app-header></app-header>
+<main>
+    <section class="popular-films">
+        <div class="section-name">
+            <div><hr><p>Popular</p></div>
+            <div><hr><p>Films</p></div>
+        </div>
+        <div class="slider__container">
+            <div class="slider__track">
+                <div class="slider__item" *ngFor="let film of  popularFilm">
+                    <app-popular-film [film]="film"></app-popular-film>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="film-list-section">
+        <div class="wrapper">
+            <p class="film-list-tile">List of Films</p>
+            <div class="film-list">
+                <div *ngFor="let film of  films">
+                    <app-film [film]="film"  (click)="onClickHandler(film.id)"></app-film>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>
